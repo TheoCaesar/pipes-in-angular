@@ -5,8 +5,10 @@ import { Pipe, PipeTransform } from "@angular/core";
     standalone: true
 })
 export class TemperaturePipe implements PipeTransform{
-    transform(value: string | number , 
+    transform(value: string | number | null , 
         inputType: 'cel' | 'fah', outputType ?: 'cel' | 'fah'){
+        if (!value) return value;  //if null return null
+        
         let val = (typeof value=== "string") ? parseFloat(value) :  value;
         
         let outputTemp;

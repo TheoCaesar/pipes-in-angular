@@ -7,7 +7,8 @@
         <p>{{ currentDate | date:'medium'}}</p>
       </div>
     </header>
-    <p>New York: {{ currentTemperaturs.newYork | temp:'fah' : 'cel'  }}</p>
+    <!-- chaining pipes are possible, but they have their own limitations -->
+    <p>New York: {{ currentTemperaturs.newYork| number : '1.1-2' | temp:'fah' : 'cel'  }}</p>
     <p>Berlin: {{ currentTemperaturs.berlin | temp: 'fah' }}</p>
     <p>Paris: {{ currentTemperaturs.paris | temp:'cel' }}</p>
     <p>Chicago: {{ currentTemperaturs.chicago | temp:'cel' : 'fah' }}</p>
