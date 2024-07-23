@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'sort',
-  standalone: true
+  standalone: true,
+  pure: false //disable the caching method and get array each and everytime
 })
 export class SortPipe implements PipeTransform {
   transform(value: string[] | number[], direction: 'asc' | 'desc' = 'asc'){

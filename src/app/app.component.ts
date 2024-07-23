@@ -24,5 +24,8 @@ export class AppComponent {
 
   onReset(index: number) {
     this.historicTemperatures[index] = 18;
+    // let newArray = [...this.historicTemperatures]; //create new array in new memory space
+    // newArray[index] = 18;
+    // this.historicTemperatures = newArray;
   }
 }
